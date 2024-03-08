@@ -1,6 +1,6 @@
 # ProtoToken Faucet
 
-The ProtoToken Faucet is a web application designed to allow users to receive test tokens for development or testing purposes on blockchain environments. This application is divided into two main components: a backend, developed using Express and TypeScript, and a frontend, developed using React and TypeScript.
+The ProtoToken Faucet is a web application designed to allow users to receive test tokens for testing purposes on blockchain environments. This application is divided into two main components: a backend, developed using Express and TypeScript, and a frontend, developed using React and TypeScript.
 
 ## Project Structure
 
