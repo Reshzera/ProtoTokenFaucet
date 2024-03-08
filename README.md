@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+# README for the ProtoToken Faucet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The ProtoToken Faucet is a web application designed to allow users to receive test tokens for development or testing purposes on blockchain environments. This application is divided into two main components: a backend, developed using Express and TypeScript, and a frontend, developed using React and TypeScript.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project is organized into two main folders:
 
-## Expanding the ESLint configuration
+- **Backend**: Contains all the necessary code to interact with the ProtoToken smart contract, mint tokens, and transfer them to users without requiring them to pay transaction fees.
+- **Frontend**: A user interface built with React and TypeScript that allows users to easily interact with the faucet by providing their wallet addresses to receive tokens.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Backend (Express + TypeScript)
 
-- Configure the top-level `parserOptions` property like this:
+The backend of the faucet utilizes Express and TypeScript to create an API that handles requests from the frontend. It directly interacts with the ProtoToken smart contract to mint tokens and transfer them to the user-provided wallet address.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+#### Setup
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To set up and run the backend, follow these steps:
+
+1. Navigate to the `backend` folder.
+2. Install dependencies using `yarn`.
+3. Create a `.env` file in the root of the `backend` folder with the following variables:
+   - `PORT`: The port on which the backend server will run.
+   - `PRIVATE_KEY`: The private key of the wallet that owns the contract.
+   - `PUBLIC_KEY`: The public key of the wallet that owns the contract.
+   - `CONTRACT_ADDRESS`: The address of the ProtoToken contract.
+   - `NODE_URL`: Your Infura or other node URL to access the blockchain network.
+   - `FRONT_URL`: The URL of the frontend application.
+4. Run the server using `yarn start`.
+
+### Frontend (React + TypeScript)
+
+The frontend provides a user-friendly interface for users to request tokens. It collects the user's wallet address and communicates with the backend to transfer the tokens.
+
+#### Setup
+
+To set up and run the frontend, follow these steps:
+
+1. Navigate to the `frontend` folder.
+2. Install dependencies using `yarn`.
+3. Run the application using `yarn dev`.
+4. The application will be accessible through a browser at `http://localhost:5173`.
+
+## Contract Address
+
+The ProtoToken smart contract is deployed on the Sepolia network and can be accessed at the following address: `0x7B2ebb6f23c112A54025c52c29F378a65b1A6e86`
+
+To view the contract and its transactions, you can use the following link to Sepolia Etherscan:
+
+[View Contract on Sepolia Etherscan](https://sepolia.etherscan.io/address/0x7B2ebb6f23c112A54025c52c29F378a65b1A6e86)
+
+## Contributions
+
+Contributions to the project are always welcome. If you would like to contribute, please create a pull request or open an issue for discussion.
+
+---
+
+This README serves as a basic introduction and setup guide for the ProtoToken Faucet. Ensure you follow the detailed setup instructions for each part of the project to ensure everything operates correctly.
